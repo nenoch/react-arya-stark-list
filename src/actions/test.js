@@ -11,5 +11,16 @@ describe('Actions', ()=>{
       text: name,
     };
 
-    expect(actions.submitName(name)).toEqual(expectedAction);  });
+    expect(actions.submitName(name)).toEqual(expectedAction);
+  });
+
+  it('Should create an action to delete a name', ()=>{
+    const expectedAction = {
+      type: types.DELETE_NAME,
+      id: 1,
+    };
+
+    expect(actions.deleteName(1)).toEqual(expectedAction);
+  });
+
 });

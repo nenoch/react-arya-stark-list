@@ -4,12 +4,14 @@ import {App} from './App';
 import { initialState } from './reducers/';
 
 it('renders without crashing', () => {
-  const mockFunction = jest.fn();
+  const mockSubmit = jest.fn();
+  const mockDelete = jest.fn();
 
   const component = shallow(
     <App
     state={initialState}
-    submitName={mockFunction}
+    submitName={mockSubmit}
+    deleteName={mockDelete}
     names={[]}
     />
   );

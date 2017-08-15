@@ -28,4 +28,29 @@ describe('Reducer', () => {
       expect(reducer(undefined, action)).toEqual(expectedState);
     });
   });
+
+  describe('Delete name', () => {
+    it('Should return the correct state', () => {
+      const startingState = {
+        names: [
+          {
+            id: 1,
+            text: nameText,
+          },
+        ],
+      };
+
+      const action = {
+        type: types.DELETE_NAME,
+        id: 1,
+      };
+
+      const expectedState = {
+        names: [],
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
+  });
+
 });

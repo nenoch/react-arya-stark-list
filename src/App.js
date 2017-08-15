@@ -5,11 +5,11 @@ import AddName from './components/addName/';
 import AryaList from './components/aryaList/';
 import actions from './actions/';
 
-export const App = ({ submitName, names }) => (
+export const App = ({ submitName, names, deleteName }) => (
   <div>
     <h1>Arya Stark List</h1>
     <AddName submitName={submitName} />
-    <AryaList names={names}/>
+    <AryaList names={names} deleteName={deleteName}/>
   </div>
 );
 
@@ -21,6 +21,7 @@ App.propTypes = {
       text: PropTypes.string.isRequired,
     },
   )).isRequired,
+  deleteName: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state.aryaStarkListApp;
@@ -30,6 +31,9 @@ const mapDispatchToProps = dispatch => ({
     if (text) {
       dispatch(actions.submitName(text));
     }
+  },
+  deleteName: (id) => {
+    dispatch(actions.deleteName(id));
   },
 });
 

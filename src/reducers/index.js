@@ -18,6 +18,15 @@ export const reducer = (state = initialState, action) => {
           },
         ],
       };
+    case types.DELETE_NAME:
+      return {
+        ...state,
+        names: [
+          ...state.names.filter(name => (
+            name.id !== action.id
+          )),
+        ],
+      };
 
     default:
       return state;
