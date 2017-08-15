@@ -47,6 +47,12 @@ describe('Reducer', () => {
 
       const expectedState = {
         names: [],
+        deleted:[
+          {
+            id: 1,
+            text: nameText,
+          },
+        ]
       };
 
       expect(reducer(startingState, action)).toEqual(expectedState);
@@ -56,7 +62,13 @@ describe('Reducer', () => {
   describe('Undelete name', () => {
     it('Should return the correct state', () => {
       const startingState = {
-        names: [],
+          names: [],
+          deleted:[
+            {
+              id: 1,
+              text: nameText,
+            },
+          ]
       };
 
       const action = {
@@ -65,11 +77,13 @@ describe('Reducer', () => {
       };
 
       const expectedState = {
-        names: [{
-          id: 1,
-          text: nameText,
-        },
-      ],
+        names: [
+          {
+            id: 1,
+            text: nameText,
+          },
+        ],
+        deleted:[],
       };
 
       expect(reducer(startingState, action)).toEqual(expectedState);

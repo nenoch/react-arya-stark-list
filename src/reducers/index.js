@@ -26,16 +26,26 @@ export const reducer = (state = initialState, action) => {
             name.id !== action.id
           )),
         ],
+        deleted: [
+          ...state.names.filter(name => (
+            name.id === action.id
+          )),
+        ],
       };
     case types.UNDELETE_NAME:
       return {
         ...state,
         names: [
-          ...state.names.filter(name => (
+          ...state.deleted.filter(name => (
+            name.id === action.id
+          )),
+        ],
+        deleted: [
+          ...state.deleted.filter(name => (
             name.id !== action.id
           )),
         ],
-      };
+      }
 
     default:
       return state;

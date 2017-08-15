@@ -1,17 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AryaList = ({ names, deleteName }) => {
+const AryaList = ({ names, deleted, deleteName, undeleteName }) => {
+
+  function toggleListItem(item){
+    if (names.includes(item)) {
+      return (<button
+        type='button'
+        className='name-delete'
+        onClick={()=>deleteName(item.id)}
+      >Delete</button>)
+    } else if (deleted.includes(item)) {
+      return (<button
+        type='button'
+        className='name-undelete'
+        onClick={()=>undeleteName(item.id)}
+      >Undelete</button>)
+    }
+  }
+
   const nameItems = names.map(name => (
     <li key={name.id}>
-    <button
-      type='button'
-      className='name-delete'
-      onClick={()=>deleteName(name.id)}
-    >Delete</button>
+      {toggleListItem(name)}
       <span className="name-text">{name.text}</span>
-    </li>
-  ));
+    </li>));
 
   return (
     <ul>

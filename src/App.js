@@ -5,11 +5,11 @@ import AddName from './components/addName/';
 import AryaList from './components/aryaList/';
 import actions from './actions/';
 
-export const App = ({ submitName, names, deleteName }) => (
+export const App = ({ submitName, names, deleted, deleteName, undeleteName }) => (
   <div>
     <h1>Arya Stark List</h1>
     <AddName submitName={submitName} />
-    <AryaList names={names} deleteName={deleteName}/>
+    <AryaList names={names} deleted={deleted} deleteName={deleteName} undeleteName={undeleteName}/>
   </div>
 );
 
