@@ -10,6 +10,7 @@ it('renders without crashing', () => {
     <App
     state={initialState}
     submitName={mockFunction}
+    names={[]}
     />
   );
 

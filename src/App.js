@@ -2,17 +2,25 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import AddName from './components/addName/';
+import AryaList from './components/aryaList/';
 import actions from './actions/';
 
-export const App = ({ submitName }) => (
+export const App = ({ submitName, names }) => (
   <div>
     <h1>Arya Stark List</h1>
     <AddName submitName={submitName} />
+    <AryaList names={names}/>
   </div>
 );
 
 App.propTypes = {
   submitName: PropTypes.func.isRequired,
+  names: PropTypes.arrayOf(PropTypes.shape(
+    {
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    },
+  )).isRequired,
 };
 
 const mapStateToProps = state => state.aryaStarkListApp;
