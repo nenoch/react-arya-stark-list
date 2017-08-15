@@ -23,4 +23,13 @@ describe('Actions', ()=>{
     expect(actions.deleteName(1)).toEqual(expectedAction);
   });
 
+  it('Should create an action to undelete a name', ()=>{
+    const expectedAction = {
+      type: types.UNDELETE_NAME,
+      id: 1,
+    };
+
+    expect(actions.undeleteName(1)).toEqual(expectedAction);
+  });
+
 });

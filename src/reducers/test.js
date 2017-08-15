@@ -53,4 +53,27 @@ describe('Reducer', () => {
     });
   });
 
+  describe('Undelete name', () => {
+    it('Should return the correct state', () => {
+      const startingState = {
+        names: [],
+      };
+
+      const action = {
+        type: types.UNDELETE_NAME,
+        id: 1,
+      };
+
+      const expectedState = {
+        names: [{
+          id: 1,
+          text: nameText,
+        },
+      ],
+      };
+
+      expect(reducer(startingState, action)).toEqual(expectedState);
+    });
+  });
+
 });

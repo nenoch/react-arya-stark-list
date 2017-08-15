@@ -21,6 +21,12 @@ const actions = {
       id,
     };
   },
+  undeleteName(id) {
+    return {
+      type: types.UNDELETE_NAME,
+      id: id,
+    };
+  },
 };
 
 export default actions;
