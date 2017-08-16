@@ -5,24 +5,24 @@ const AddName = ({submitName}) => {
   let input;
 
   return (
-  <div>
-    <form onSubmit={ (event) => {
-      event.preventDefault();
-      submitName(input.value);
-      input.value = '';
-      }}
-    >
-      <input
-        className='name-input'
-        ref={(element) => {
-          input = element;
-        }}
-      />
-      <button type='submit' className='name-submit'>
-        Add name
-      </button>
-    </form>
-  </div>);
+      <div className="col-md-4 col-sm-4 col-lg-4">
+        <form onSubmit={ (event) => {
+          event.preventDefault();
+          submitName(input.value);
+          input.value = '';
+          }}
+          >
+          <div className="form-group form-element">
+            <div className="input-group">
+              <div className="input-group-addon">To Kill</div>
+                <input className="name-input form-control" ref={(element) => {
+                  input = element;
+                }}/>
+              </div>
+            </div>
+            <button type="submit" className="btn btn-warning form-element name-submit">Add</button>
+        </form>
+      </div>);
 
 };
 

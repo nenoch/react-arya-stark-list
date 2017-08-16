@@ -4,30 +4,32 @@ import PropTypes from 'prop-types';
 const AryaList = ({ names, deleted, deleteName, undeleteName }) => {
 
   const nameItems = names.map(name => (
-    <li key={name.id}>
+    <li key={name.id} className="list-group-item name-item">
       <button
         type='button'
         className='name-delete'
         onClick={()=>deleteName(name.id)}
       >Kill</button>
-      <span className="name-text">{name.text}</span>
+      <span className="list-group-item-heading name-text">{name.text}</span>
     </li>));
 
   const deletedItems = deleted.map(name => (
-    <li key={name.id}>
+    <li key={name.id} className="list-group-item name-item">
       <button
         type='button'
         className='name-undelete'
         onClick={()=>undeleteName(name.id)}
       >Resuscitate</button>
-      <span className="deleted-name-text">{name.text}</span>
+      <span className="list-group-item-heading deleted-name-text">{name.text}</span>
     </li>));
 
   return (
-    <ul>
-      {nameItems}
-      {deletedItems}
-    </ul>
+      <div className="col-md-6 col-sm-6 col-lg-6">
+        <ul className='list-group'>
+          {nameItems}
+          {deletedItems}
+        </ul>
+      </div>
   );
 };
 

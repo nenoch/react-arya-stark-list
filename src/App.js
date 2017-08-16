@@ -6,11 +6,17 @@ import AryaList from './components/aryaList/';
 import actions from './actions/';
 
 export const App = ({ submitName, names, deleted, deleteName, undeleteName }) => (
-  <div>
-    <h1>Arya Stark List</h1>
-    <AddName submitName={submitName} />
-    <AryaList names={names} deleted={deleted} deleteName={deleteName} undeleteName={undeleteName}/>
+  <div className="container">
+  <div className="row">
+    <div className="col-md-12">
+      <h1 className="page-header">Arya Stark List</h1>
+    </div>
   </div>
+  <div className="row">
+      <AddName submitName={submitName} />
+      <AryaList names={names} deleted={deleted} deleteName={deleteName} undeleteName={undeleteName}/>
+  </div>
+</div>
 );
 
 App.propTypes = {

@@ -1,3 +1,21 @@
+body {
+  background-color: #cccccc !important;
+}
+
+@media screen and (max-width: 770px) {
+  .name-item:first-child {
+    margin-top: 10px;
+  }
+}
+
+.list-group-item.name-item {
+  border: 0px;
+}
+
+button:focus {
+  outline:0 !important;
+}
+
 .App {
   text-align: center;
 }

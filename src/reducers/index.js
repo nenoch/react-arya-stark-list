@@ -28,6 +28,7 @@ export const reducer = (state = initialState, action) => {
           )),
         ],
         deleted: [
+          ...state.deleted,
           ...state.names.filter(name => (
             name.id === action.id
           )),
@@ -37,6 +38,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         names: [
+          ...state.names,
           ...state.deleted.filter(name => (
             name.id === action.id
           )),
