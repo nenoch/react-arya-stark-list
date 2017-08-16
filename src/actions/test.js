@@ -7,7 +7,7 @@ describe('Actions', ()=>{
   it('Should create an action to add a name', ()=>{
     const expectedAction = {
       type: types.SUBMIT_NAME,
-      id: 1,
+      id: 14,
       text: name,
     };
 

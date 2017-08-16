@@ -17,7 +17,7 @@ describe('AryaList component', () => {
       {
         id: 2,
         text: 'Walder Frey',
-      }
+      },
     ],
     deleteName: deleteMock,
     undeleteName: undeleteMock,

@@ -1,6 +1,6 @@
 import types from '../constants/';
 
-let nameId = 0;
+let nameId = 13;
 
 const nextId = () => {
   nameId += 1;
