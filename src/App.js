@@ -21,7 +21,14 @@ App.propTypes = {
       text: PropTypes.string.isRequired,
     },
   )).isRequired,
+  deleted: PropTypes.arrayOf(PropTypes.shape(
+    {
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+    },
+  )).isRequired,
   deleteName: PropTypes.func.isRequired,
+  undeleteName: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => state.aryaStarkListApp;
@@ -34,6 +41,9 @@ const mapDispatchToProps = dispatch => ({
   },
   deleteName: (id) => {
     dispatch(actions.deleteName(id));
+  },
+  undeleteName: (id) => {
+    dispatch(actions.undeleteName(id));
   },
 });
 

@@ -24,7 +24,7 @@ const actions = {
   undeleteName(id) {
     return {
       type: types.UNDELETE_NAME,
-      id: id,
+      id,
     };
   },
 };

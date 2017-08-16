@@ -23,6 +23,7 @@ describe('Reducer', () => {
             text: nameText,
           },
         ],
+        deleted: [],
       };
 
       expect(reducer(undefined, action)).toEqual(expectedState);
@@ -38,6 +39,7 @@ describe('Reducer', () => {
             text: nameText,
           },
         ],
+        deleted: [],
       };
 
       const action = {

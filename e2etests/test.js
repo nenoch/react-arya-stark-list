@@ -17,7 +17,7 @@ describe('Arya Stark List app', () => {
     expect(currentName).to.eql(cersei);
   });
 
-  it('should allow Arya to delete a name', () => {
+  it('should allow Arya to delete a name (kill)', () => {
     const cersei = 'Cersei Lannister';
     browser.url('http://localhost:3000');
     browser.element('.name-input').setValue(cersei);
@@ -27,7 +27,7 @@ describe('Arya Stark List app', () => {
     expect(currentName.state).to.eql('failure');
   });
 
-  it('should allow Arya to undelete a name', () => {
+  it('should allow Arya to undelete a name (resuscitate)', () => {
     const cersei = 'Cersei Lannister';
     browser.url('http://localhost:3000');
     browser.element('.name-input').setValue(cersei);

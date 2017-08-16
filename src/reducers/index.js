@@ -2,6 +2,7 @@ import types from '../constants/';
 
 export const initialState = {
   names: [],
+  deleted: [],
 };
 
 export const reducer = (state = initialState, action) => {
