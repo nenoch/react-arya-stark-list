@@ -1,5 +1,8 @@
+@import url(https://fonts.googleapis.com/css?family=Lora);
+
 body {
   background-color: #cccccc !important;
+  font-family: 'Lora', serif !important;
 }
 
 @media screen and (max-width: 770px) {
@@ -14,6 +17,31 @@ body {
 
 button:focus {
   outline:0 !important;
+}
+
+button.name-delete {
+  color: #000;
+  background-color: #BC0A1A;
+  border-color: #BC0A1A;
+  border-radius: 5px;
+}
+
+button.name-undelete {
+  color: #fff;
+  background-color: #33C1FF;
+  border-color: #33C1FF;
+  border-radius: 5px;
+}
+
+.deleted-name-text {
+  padding-left: 10px;
+  font-size: 16px;
+  text-decoration: line-through;
+}
+
+.name-text {
+  padding-left: 10px;
+  font-size: 16px;
 }
 
 .App {

@@ -9,7 +9,7 @@ const AryaList = ({ names, deleted, deleteName, undeleteName }) => {
         type='button'
         className='name-delete'
         onClick={()=>deleteName(name.id)}
-      >Kill</button>
+      ><i className="fa fa-bolt" aria-hidden="true"></i> Kill</button>
       <span className="list-group-item-heading name-text">{name.text}</span>
     </li>));
 
@@ -19,7 +19,7 @@ const AryaList = ({ names, deleted, deleteName, undeleteName }) => {
         type='button'
         className='name-undelete'
         onClick={()=>undeleteName(name.id)}
-      >Resuscitate</button>
+      ><i className="fa fa-fire" aria-hidden="true"></i> Resuscitate</button>
       <span className="list-group-item-heading deleted-name-text">{name.text}</span>
     </li>));
 
